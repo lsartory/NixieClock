@@ -1,40 +1,8 @@
-# -------------------------------------------------------------------------- #
-#
-# Copyright (C) 2017  Intel Corporation. All rights reserved.
-# Your use of Intel Corporation's design tools, logic functions 
-# and other software and tools, and its AMPP partner logic 
-# functions, and any output files from any of the foregoing 
-# (including device programming or simulation files), and any 
-# associated documentation or information are expressly subject 
-# to the terms and conditions of the Intel Program License 
-# Subscription Agreement, the Intel Quartus Prime License Agreement,
-# the Intel FPGA IP License Agreement, or other applicable license
-# agreement, including, without limitation, that your use is for
-# the sole purpose of programming logic devices manufactured by
-# Intel and sold by Intel or its authorized distributors.  Please
-# refer to the applicable agreement for further details.
-#
-# -------------------------------------------------------------------------- #
-#
-# Quartus Prime
-# Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-# Date created = 18:02:41  March 28, 2018
-#
-# -------------------------------------------------------------------------- #
-#
-# Notes:
-#
-# 1) The default values for assignments are stored in the file:
-#		Nixie_assignment_defaults.qdf
-#    If this file doesn't exist, see file:
-#		assignment_defaults.qdf
-#
-# 2) Altera recommends that you do not modify this file. This
-#    file is updated automatically by the Quartus Prime software
-#    and any changes you make may be lost or overwritten.
-#
-# -------------------------------------------------------------------------- #
-
+#### Nixie.qsf
+ ##
+ ## Author: L. Sartory
+ ## Creation: 29.04.2018
+####
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE10E22C8
@@ -43,25 +11,117 @@ set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:02:41  MARCH 28, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
-set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
-set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
-set_global_assignment -name ENABLE_OCT_DONE OFF
-set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
-set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
-set_global_assignment -name STRATIXV_CONFIGURATION_SCHEME "PASSIVE SERIAL"
 set_global_assignment -name USE_CONFIGURATION_DEVICE ON
 set_global_assignment -name CYCLONEIII_CONFIGURATION_DEVICE EPCQ16A
-set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
-set_global_assignment -name CONFIGURATION_VCCIO_LEVEL 3.0V
+set_global_assignment -name SAVE_DISK_SPACE OFF
+set_global_assignment -name SYNTH_MESSAGE_LEVEL MEDIUM
+set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name NUM_PARALLEL_PROCESSORS 4
+
+set_global_assignment -name FITTER_EARLY_TIMING_ESTIMATE_MODE PESSIMISTIC
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT EXTRA
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS INPUT TRI-STATED"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.0-V LVTTL"
-set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
-set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
-set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
-set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name CONFIGURATION_VCCIO_LEVEL 3.0V
+
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS OFF
+set_global_assignment -name OPTIMIZE_POWER_DURING_FITTING OFF
+
+set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name SYNCHRONIZER_IDENTIFICATION AUTO
+set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
+
+set_location_assignment PIN_23 -to CLK
+set_location_assignment PIN_33 -to DIGIT[1][0]
+set_location_assignment PIN_43 -to DIGIT[1][1]
+set_location_assignment PIN_39 -to DIGIT[1][2]
+set_location_assignment PIN_38 -to DIGIT[1][3]
+set_location_assignment PIN_50 -to DIGIT[1][4]
+set_location_assignment PIN_52 -to DIGIT[1][5]
+set_location_assignment PIN_54 -to DIGIT[1][6]
+set_location_assignment PIN_51 -to DIGIT[1][7]
+set_location_assignment PIN_44 -to DIGIT[1][8]
+set_location_assignment PIN_34 -to DIGIT[1][9]
+set_location_assignment PIN_42 -to DIGIT[2][0]
+set_location_assignment PIN_46 -to DIGIT[2][1]
+set_location_assignment PIN_49 -to DIGIT[2][2]
+set_location_assignment PIN_55 -to DIGIT[2][3]
+set_location_assignment PIN_60 -to DIGIT[2][4]
+set_location_assignment PIN_65 -to DIGIT[2][5]
+set_location_assignment PIN_64 -to DIGIT[2][6]
+set_location_assignment PIN_58 -to DIGIT[2][7]
+set_location_assignment PIN_59 -to DIGIT[2][8]
+set_location_assignment PIN_53 -to DIGIT[2][9]
+set_location_assignment PIN_66 -to DIGIT[3][0]
+set_location_assignment PIN_70 -to DIGIT[3][1]
+set_location_assignment PIN_72 -to DIGIT[3][2]
+set_location_assignment PIN_74 -to DIGIT[3][3]
+set_location_assignment PIN_75 -to DIGIT[3][4]
+set_location_assignment PIN_73 -to DIGIT[3][5]
+set_location_assignment PIN_71 -to DIGIT[3][6]
+set_location_assignment PIN_69 -to DIGIT[3][7]
+set_location_assignment PIN_68 -to DIGIT[3][8]
+set_location_assignment PIN_67 -to DIGIT[3][9]
+set_location_assignment PIN_76 -to DIGIT[4][0]
+set_location_assignment PIN_85 -to DIGIT[4][1]
+set_location_assignment PIN_99 -to DIGIT[4][2]
+set_location_assignment PIN_86 -to DIGIT[4][3]
+set_location_assignment PIN_113 -to DIGIT[4][4]
+set_location_assignment PIN_84 -to DIGIT[4][5]
+set_location_assignment PIN_87 -to DIGIT[4][6]
+set_location_assignment PIN_80 -to DIGIT[4][7]
+set_location_assignment PIN_83 -to DIGIT[4][8]
+set_location_assignment PIN_77 -to DIGIT[4][9]
+set_location_assignment PIN_110 -to DIGIT[5][0]
+set_location_assignment PIN_121 -to DIGIT[5][1]
+set_location_assignment PIN_120 -to DIGIT[5][2]
+set_location_assignment PIN_119 -to DIGIT[5][3]
+set_location_assignment PIN_106 -to DIGIT[5][4]
+set_location_assignment PIN_104 -to DIGIT[5][5]
+set_location_assignment PIN_103 -to DIGIT[5][6]
+set_location_assignment PIN_98 -to DIGIT[5][7]
+set_location_assignment PIN_100 -to DIGIT[5][8]
+set_location_assignment PIN_101 -to DIGIT[5][9]
+set_location_assignment PIN_115 -to DIGIT[6][0]
+set_location_assignment PIN_124 -to DIGIT[6][1]
+set_location_assignment PIN_125 -to DIGIT[6][2]
+set_location_assignment PIN_126 -to DIGIT[6][3]
+set_location_assignment PIN_127 -to DIGIT[6][4]
+set_location_assignment PIN_129 -to DIGIT[6][5]
+set_location_assignment PIN_133 -to DIGIT[6][6]
+set_location_assignment PIN_105 -to DIGIT[6][7]
+set_location_assignment PIN_112 -to DIGIT[6][8]
+set_location_assignment PIN_114 -to DIGIT[6][9]
+set_location_assignment PIN_1 -to GPS_PPS
+set_location_assignment PIN_2 -to GPS_RX
+set_location_assignment PIN_3 -to GPS_TX
+set_location_assignment PIN_111 -to NIXIE_ENABLE
+set_location_assignment PIN_128 -to SWITCH[1]
+set_location_assignment PIN_132 -to SWITCH[2]
+
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to DIGIT[*][*]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to GPS_TX
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to NIXIE_ENABLE
+
 set_global_assignment -name VHDL_FILE Nixie.vhd
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SDC_FILE Nixie.sdc
+
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
