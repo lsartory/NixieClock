@@ -39,7 +39,6 @@ entity Nixie is
 	);
 end Nixie;
 
-
 architecture Nixie_Arch of Nixie is
 begin
 
