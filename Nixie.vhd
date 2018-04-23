@@ -40,25 +40,25 @@ entity Nixie is
 end Nixie;
 
 architecture Nixie_Arch of Nixie is
-	signal CLK_1Hz : std_logic := '0';
+	signal clk_1Hz : std_logic := '0';
 	signal shift_register : std_logic_vector(9 downto 0) := "0000000001";
 begin
 
 	cs: entity work.ClockScaler
 		generic map (
 			INPUT_FREQUENCY         => 16.384000,
-			OUTPUT_FREQUENCY        => 0.000002,
+			OUTPUT_FREQUENCY        => 0.000001,
 			CLOCKS_ARE_SYNCHRONIZED => true
 		)
 		port map (
 			INPUT_CLK  => CLK,
 			TARGET_CLK => CLK,
-			OUTPUT_CLK => CLK_1Hz
+			OUTPUT_CLK => clk_1Hz
 		);
 
-	process (CLK_1Hz)
+	process (clk_1Hz)
 	begin
-		if rising_edge(CLK_1Hz) then
+		if rising_edge(clk_1Hz) then
 			shift_register <= shift_register(shift_register'high - 1 downto shift_register'low) & '0';
 			if shift_register(shift_register'high) = '1' then
 				shift_register <= (shift_register'low => '1', others => '0');
