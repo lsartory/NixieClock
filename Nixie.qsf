@@ -125,6 +125,7 @@ set_instance_assignment -name SLEW_RATE 2 -to GPS_TX
 set_instance_assignment -name SLEW_RATE 2 -to NIXIE_ENABLE
 
 set_global_assignment -name VHDL_FILE ClockScaler.vhd
+set_global_assignment -name VHDL_FILE Digit.vhd
 set_global_assignment -name VHDL_FILE Nixie.vhd
 set_global_assignment -name VHDL_FILE VectorCDC.vhd
 set_global_assignment -name SDC_FILE Nixie.sdc

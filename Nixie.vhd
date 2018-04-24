@@ -19,6 +19,7 @@ end package;
 
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 use work.nixie_types.all;
 
 --------------------------------------------------
@@ -40,8 +41,8 @@ entity Nixie is
 end Nixie;
 
 architecture Nixie_Arch of Nixie is
-	signal clk_1Hz : std_logic := '0';
-	signal shift_register : std_logic_vector(9 downto 0) := "0000000001";
+	signal pulse_1Hz : std_logic := '0';
+	signal counter   : unsigned(3 downto 0) := (others => '0');
 begin
 
 	cs: entity work.ClockScaler
@@ -51,23 +52,34 @@ begin
 			CLOCKS_ARE_SYNCHRONIZED => true
 		)
 		port map (
-			INPUT_CLK  => CLK,
-			TARGET_CLK => CLK,
-			OUTPUT_CLK => clk_1Hz
+			INPUT_CLK    => CLK,
+			TARGET_CLK   => CLK,
+			OUTPUT_PULSE => pulse_1Hz
 		);
 
-	process (clk_1Hz)
+	process (CLK)
 	begin
-		if rising_edge(clk_1Hz) then
-			shift_register <= shift_register(shift_register'high - 1 downto shift_register'low) & '0';
-			if shift_register(shift_register'high) = '1' then
-				shift_register <= (shift_register'low => '1', others => '0');
+		if rising_edge(CLK) then
+			if pulse_1Hz = '1' then
+				if counter < 9 then
+					counter <= counter + 1;
+				else
+					counter <= (others => '0');
+				end if;
 			end if;
 		end if;
 	end process;
 
 	digit_gen : for i in DIGIT'high downto DIGIT'low generate
-		DIGIT(i) <= shift_register;
+		digit_decoder : entity work.Digit
+			port map (
+				CLK => CLK,
+
+				VALUE  => counter,
+				ENABLE => '1',
+				
+				DIGIT  => DIGIT(i)
+			);
 	end generate;
 	NIXIE_ENABLE <= '1';
 
