@@ -15,12 +15,10 @@ use ieee.numeric_std.all;
 entity Digit is
 	port
 	(
-		CLK          : in  std_logic;
-
-		VALUE        : in  unsigned;
-		ENABLE       : in  std_logic;
-
-		DIGIT        : out std_logic_vector
+		CLK    : in  std_logic;
+		VALUE  : in  unsigned;
+		ENABLE : in  std_logic;
+		DIGIT  : out std_logic_vector
 	);
 end Digit;
 
