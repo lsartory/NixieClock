@@ -42,6 +42,8 @@ end Nixie;
 
 architecture Nixie_Arch of Nixie is
 
+	signal switch_filtered : std_logic_vector(SWITCH'high downto SWITCH'low) := (others => '0');
+
 	signal pulse_1Hz : std_logic := '0';
 
 	signal seconds : unsigned(5 downto 0) := (others => '0');
@@ -57,16 +59,25 @@ architecture Nixie_Arch of Nixie is
 
 begin
 
+	-- Push-button filters
+	dif : for i in SWITCH'high downto SWITCH'low generate
+	begin
+		filter : entity work.DigitalInputFilter
+			port map (
+				CLK               => CLK,
+				DIGITAL_INPUT_IN  => SWITCH(i),
+				DIGITAL_INPUT_OUT => switch_filtered(i)
+			);
+	end generate;
+
 	-- 1 Hz time base
 	cs : entity work.ClockScaler
 		generic map (
-			INPUT_FREQUENCY         => 16.384000,
-			OUTPUT_FREQUENCY        =>  0.000001,
-			CLOCKS_ARE_SYNCHRONIZED => true
+			INPUT_FREQUENCY  => 16.384000,
+			OUTPUT_FREQUENCY =>  0.000001
 		)
 		port map (
 			INPUT_CLK    => CLK,
-			TARGET_CLK   => CLK,
 			OUTPUT_PULSE => pulse_1Hz
 		);
 

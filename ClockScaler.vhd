@@ -16,12 +16,10 @@ use ieee.math_real.all;
 entity ClockScaler is
 	generic (
 		INPUT_FREQUENCY         : real;
-		OUTPUT_FREQUENCY        : real;
-		CLOCKS_ARE_SYNCHRONIZED : boolean := false
+		OUTPUT_FREQUENCY        : real
 	);
 	port (
 		INPUT_CLK    : in  std_logic;
-		TARGET_CLK   : in  std_logic;
 		OUTPUT_CLK   : out std_logic;
 		OUTPUT_PULSE : out std_logic
 	);
@@ -31,7 +29,6 @@ end ClockScaler;
 
 architecture ClockScaler_arch of ClockScaler is
 	signal counter     : unsigned(63 downto 0) := (others => '0');
-	signal output_sync : std_logic;
 
 	function real_to_unsigned(x : real; size : natural) return unsigned is
 		variable tmp    : real := round(x);
@@ -54,33 +51,18 @@ begin
 			counter <= counter + real_to_unsigned((OUTPUT_FREQUENCY / INPUT_FREQUENCY) * (2.0 ** counter'length), counter'length);
 		end if;
 	end process;
+	OUTPUT_CLK <= counter(counter'high);
 
-	-- Transfer the signal into the target clock domain, if required
-	cdc_gen_1 : if not CLOCKS_ARE_SYNCHRONIZED generate
+	-- Generate a pulse in the input clock domain when a rising edge is detected
+	process (INPUT_CLK)
+		variable output_prev : std_logic := '0';
 	begin
-		cdc : work.VectorCDC
-			port map (
-				TARGET_CLK => TARGET_CLK,
-				INPUT(0)   => counter(counter'high),
-				OUTPUT(0)  => output_sync
-			);
-	end generate;
-	cdc_gen_2 : if CLOCKS_ARE_SYNCHRONIZED generate
-	begin
-		output_sync <= counter(counter'high);
-	end generate;
-	OUTPUT_CLK <= output_sync;
-
-	-- Generate a pulse in the target clock domain when a rising edge is detected
-	process (TARGET_CLK)
-		variable output_sync_prev : std_logic := '0';
-	begin
-		if rising_edge(TARGET_CLK) then
+		if rising_edge(INPUT_CLK) then
 			OUTPUT_PULSE <= '0';
-			if output_sync = '1' and output_sync_prev = '0' then
+			if counter(counter'high) = '1' and output_prev = '0' then
 				OUTPUT_PULSE <= '1';
 			end if;
-			output_sync_prev := output_sync;
+			output_prev := counter(counter'high);
 		end if;
 	end process;
 
