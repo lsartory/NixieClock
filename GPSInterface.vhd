@@ -26,7 +26,7 @@ entity GPSInterface is
 
 		GPS_DATA_IN : in  std_logic;
 		GPS_1PPS    : in  std_logic;
-		
+
 		READY       : out std_logic;
 		HOURS       : out unsigned;
 		MINUTES     : out unsigned;

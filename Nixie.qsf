@@ -111,8 +111,8 @@ set_location_assignment PIN_105 -to DIGIT[6][7]
 set_location_assignment PIN_112 -to DIGIT[6][8]
 set_location_assignment PIN_114 -to DIGIT[6][9]
 set_location_assignment PIN_1 -to GPS_1PPS
-set_location_assignment PIN_2 -to GPS_DATA_IN
-#set_location_assignment PIN_3 -to GPS_DATA_OUT
+set_location_assignment PIN_3 -to GPS_DATA_IN
+#set_location_assignment PIN_2 -to GPS_DATA_OUT
 set_location_assignment PIN_111 -to NIXIE_ENABLE
 set_location_assignment PIN_128 -to SWITCH[1]
 set_location_assignment PIN_132 -to SWITCH[2]
