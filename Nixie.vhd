@@ -32,9 +32,9 @@ entity Nixie is
 		DIGIT        : out digit_array(6 downto 1) := (others => (others => 'Z'));
 		NIXIE_ENABLE : out std_logic := 'Z';
 
-		GPS_PPS      : in  std_logic;
-		GPS_RX       : in  std_logic;
-		GPS_TX       : out std_logic := 'Z';
+		GPS_1PPS     : in  std_logic;
+		GPS_DATA_IN  : in  std_logic;
+--		GPS_DATA_OUT : out std_logic := 'Z';
 
 		SWITCH       : in  std_logic_vector(2 downto 1)
 	);
@@ -82,29 +82,45 @@ begin
 		);
 
 	-- Timekeeping process
-	process (CLK)
-	begin
-		if rising_edge(CLK) then
-			if pulse_1Hz = '1' then
-				if seconds < 59 then
-					seconds <= seconds + 1;
-				else
-					seconds <= (others => '0');
-					if minutes < 59 then
-						minutes <= minutes + 1;
-					else
-						minutes <= (others => '0');
-						if hours < 23 then
-							hours <= hours + 1;
-						else
-							hours <= (others => '0');
-						end if;
-					end if;
-				end if;
-			end if;
-		end if;
-	end process;
+--	process (CLK)
+--	begin
+--		if rising_edge(CLK) then
+--			if pulse_1Hz = '1' then
+--				if seconds < 59 then
+--					seconds <= seconds + 1;
+--				else
+--					seconds <= (others => '0');
+--					if minutes < 59 then
+--						minutes <= minutes + 1;
+--					else
+--						minutes <= (others => '0');
+--						if hours < 23 then
+--							hours <= hours + 1;
+--						else
+--							hours <= (others => '0');
+--						end if;
+--					end if;
+--				end if;
+--			end if;
+--		end if;
+--	end process;
 
+	-- GPS interface
+	gps : entity work.GPSInterface
+		port map (
+			CLK         => CLK,
+			CLRn        => not switch_filtered(1),
+
+			GPS_DATA_IN => GPS_DATA_IN,
+			GPS_1PPS    => GPS_1PPS,
+
+--			READY       : out std_logic;
+			HOURS       => hours,
+			MINUTES     => minutes,
+			SECONDS     => seconds
+--			UPDATED     : out std_logic
+		);
+	
 	-- Digit splitters
 	seconds_split : entity work.DigitSplitter port map (CLK, seconds, seconds_high, seconds_low);
 	minutes_split : entity work.DigitSplitter port map (CLK, minutes, minutes_high, minutes_low);
