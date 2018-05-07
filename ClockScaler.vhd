@@ -20,6 +20,7 @@ entity ClockScaler is
 	);
 	port (
 		INPUT_CLK    : in  std_logic;
+		CLRn         : in  std_logic;
 		OUTPUT_CLK   : out std_logic;
 		OUTPUT_PULSE : out std_logic
 	);
@@ -46,24 +47,24 @@ begin
 
 	-- Scale the input clock to match the requested output frequency
 	process (INPUT_CLK)
-	begin
-		if rising_edge(INPUT_CLK) then
-			counter <= counter + real_to_unsigned((OUTPUT_FREQUENCY / INPUT_FREQUENCY) * (2.0 ** counter'length), counter'length);
-		end if;
-	end process;
-	OUTPUT_CLK <= counter(counter'high);
-
-	-- Generate a pulse in the input clock domain when a rising edge is detected
-	process (INPUT_CLK)
 		variable output_prev : std_logic := '0';
 	begin
 		if rising_edge(INPUT_CLK) then
 			OUTPUT_PULSE <= '0';
-			if counter(counter'high) = '1' and output_prev = '0' then
-				OUTPUT_PULSE <= '1';
+
+			if CLRn = '0' then
+				counter <= (others => '0');
+			else
+				counter <= counter + real_to_unsigned((OUTPUT_FREQUENCY / INPUT_FREQUENCY) * (2.0 ** counter'length), counter'length);
+
+				if counter(counter'high) = '1' and output_prev = '0' then
+					OUTPUT_PULSE <= '1';
+				end if;
 			end if;
+
 			output_prev := counter(counter'high);
 		end if;
 	end process;
+	OUTPUT_CLK <= counter(counter'high);
 
 end ClockScaler_arch;

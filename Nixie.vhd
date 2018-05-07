@@ -43,6 +43,7 @@ end Nixie;
 architecture Nixie_Arch of Nixie is
 
 	signal switch_filtered : std_logic_vector(SWITCH'high downto SWITCH'low) := (others => '0');
+	signal clrn            : std_logic := '0';
 
 	signal pulse_1Hz : std_logic := '0';
 
@@ -50,10 +51,11 @@ architecture Nixie_Arch of Nixie is
 	signal minutes : unsigned(5 downto 0) := (others => '0');
 	signal hours   : unsigned(4 downto 0) := (others => '0');
 
-	signal gps_ready   : std_logic := '0';
+--	signal gps_ready   : std_logic := '0';
 	signal gps_seconds : unsigned(5 downto 0) := (others => '0');
 	signal gps_minutes : unsigned(5 downto 0) := (others => '0');
 	signal gps_hours   : unsigned(4 downto 0) := (others => '0');
+	signal gps_updated : std_logic := '0';
 
 	signal seconds_high : unsigned(3 downto 0) := (others => '0');
 	signal seconds_low  : unsigned(3 downto 0) := (others => '0');
@@ -74,6 +76,7 @@ begin
 				DIGITAL_INPUT_OUT => switch_filtered(i)
 			);
 	end generate;
+	clrn <= not switch_filtered(1);
 
 	-- 1 Hz time base
 	cs : entity work.ClockScaler
@@ -83,6 +86,7 @@ begin
 		)
 		port map (
 			INPUT_CLK    => CLK,
+			CLRn         => clrn and not gps_updated,
 			OUTPUT_PULSE => pulse_1Hz
 		);
 
@@ -108,10 +112,16 @@ begin
 				end if;
 			end if;
 
-			if gps_ready = '1' then
+			if gps_updated = '1' then
 				seconds <= gps_seconds;
 				minutes <= gps_minutes;
 				hours   <= gps_hours;
+			end if;
+
+			if clrn = '0' then
+				seconds <= (others => '0');
+				minutes <= (others => '0');
+				hours   <= (others => '0');
 			end if;
 		end if;
 	end process;
@@ -120,16 +130,16 @@ begin
 	gps : entity work.GPSInterface
 		port map (
 			CLK         => CLK,
-			CLRn        => not switch_filtered(1),
+			CLRn        => clrn,
 
 			GPS_DATA_IN => GPS_DATA_IN,
 			GPS_1PPS    => GPS_1PPS,
 
-			READY       => gps_ready,
+--			READY       => gps_ready,
 			HOURS       => gps_hours,
 			MINUTES     => gps_minutes,
-			SECONDS     => gps_seconds
---			UPDATED     => gps_updated
+			SECONDS     => gps_seconds,
+			UPDATED     => gps_updated
 		);
 
 	-- Digit splitters

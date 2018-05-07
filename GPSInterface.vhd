@@ -57,6 +57,8 @@ architecture GPSInterface_arch of GPSInterface is
 	signal shift_cnt : unsigned(2 downto 0);
 	signal recv_done : std_logic;
 
+	signal gps_updated : std_logic := '0';
+
 begin
 
 	-- Synchronization
@@ -146,7 +148,8 @@ begin
 		if rising_edge(CLK) then
 			if CLRn = '0' then
 				READY <= '0';
-			elsif gps_1pps_sync = '1' then
+			--elsif gps_1pps_sync = '1' then -- TODO
+			elsif gps_updated = '1' then
 				READY <= '1';
 			end if;
 		end if;
@@ -163,7 +166,8 @@ begin
 			HOURS      => HOURS,
 			MINUTEs    => MINUTES,
 			SECONDS    => SECONDS,
-			UPDATED    => UPDATED
+			UPDATED    => gps_updated
 		);
+	UPDATED <= gps_updated;
 
 end GPSInterface_arch;
