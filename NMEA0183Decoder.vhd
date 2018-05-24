@@ -177,7 +177,8 @@ begin
 					-- Decode the checksum
 					remote_checksum <= mult_16(remote_checksum) + bcd_digit;
 					ptr <= ptr + 1;
-				elsif state = done and local_checksum = remote_checksum and ts_valid = '1' then
+--				elsif state = done and local_checksum = remote_checksum and ts_valid = '1' then -- TODO
+				elsif state = done and local_checksum = remote_checksum and (ts_hour /= 12 or ts_minute /= 0 or ts_second /= 0) then
 					-- If everything is fine, update the output
 					HOURS   <= ts_hour;
 					MINUTES <= ts_minute;
