@@ -45,7 +45,8 @@ architecture Nixie_Arch of Nixie is
 	signal switch_filtered : std_logic_vector(SWITCH'high downto SWITCH'low) := (others => '0');
 	signal clrn            : std_logic := '0';
 
-	signal pulse_1Hz : std_logic := '0';
+	signal pulse_1Hz  : std_logic := '0';
+	signal pulse_1kHz : std_logic := '0';
 
 	signal seconds : unsigned(5 downto 0) := (others => '0');
 	signal minutes : unsigned(5 downto 0) := (others => '0');
@@ -63,6 +64,8 @@ architecture Nixie_Arch of Nixie is
 	signal minutes_low  : unsigned(3 downto 0) := (others => '0');
 	signal hours_high   : unsigned(3 downto 0) := (others => '0');
 	signal hours_low    : unsigned(3 downto 0) := (others => '0');
+
+	signal brightness : unsigned(2 downto 0) := (0 => '0', others => '1');
 
 begin
 
@@ -154,6 +157,37 @@ begin
 	digit_4 : entity work.Digit port map (CLK, minutes_high, '1', DIGIT(4));
 	digit_5 : entity work.Digit port map (CLK, hours_low,    '1', DIGIT(5));
 	digit_6 : entity work.Digit port map (CLK, hours_high,   '1', DIGIT(6));
-	NIXIE_ENABLE <= '1';
+
+	-- Dimming
+	cs2 : entity work.ClockScaler
+	generic map (
+		INPUT_FREQUENCY  => 16.384000,
+		OUTPUT_FREQUENCY =>  0.001000
+	)
+	port map (
+		INPUT_CLK    => CLK,
+		CLRn         => clrn,
+		OUTPUT_PULSE => pulse_1kHz
+	);
+	process (CLK)
+		variable switch_prev : std_logic := '0';
+		variable counter     : unsigned(brightness'high downto brightness'low) := (others => '0');
+	begin
+		if rising_edge(CLK) then
+			if switch_prev = '0' and switch_filtered(2) = '1' then
+				brightness <= brightness - 1;
+			end if;
+
+			if pulse_1kHz = '1' then
+				NIXIE_ENABLE <= '0';
+				if counter < brightness then
+					NIXIE_ENABLE <= '1';
+				end if;
+				counter := counter + 1;
+			end if;
+
+			switch_prev := switch_filtered(2);
+		end if;
+	end process;
 
 end architecture;

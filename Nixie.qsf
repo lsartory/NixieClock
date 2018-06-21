@@ -118,10 +118,10 @@ set_location_assignment PIN_128 -to SWITCH[1]
 set_location_assignment PIN_132 -to SWITCH[2]
 
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to DIGIT[*][*]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to GPS_TX
+#set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to GPS_TX
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to NIXIE_ENABLE
 set_instance_assignment -name SLEW_RATE 2 -to DIGIT[*][*]
-set_instance_assignment -name SLEW_RATE 2 -to GPS_TX
+#set_instance_assignment -name SLEW_RATE 2 -to GPS_TX
 set_instance_assignment -name SLEW_RATE 2 -to NIXIE_ENABLE
 
 set_global_assignment -name VHDL_FILE ClockScaler.vhd
