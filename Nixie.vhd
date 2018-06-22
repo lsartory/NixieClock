@@ -79,7 +79,7 @@ begin
 				DIGITAL_INPUT_OUT => switch_filtered(i)
 			);
 	end generate;
-	clrn <= not switch_filtered(1);
+	clrn <= not switch_filtered(2);
 
 	-- 1 Hz time base
 	cs : entity work.ClockScaler
@@ -174,10 +174,6 @@ begin
 		variable counter     : unsigned(brightness'high downto brightness'low) := (others => '0');
 	begin
 		if rising_edge(CLK) then
-			if switch_prev = '0' and switch_filtered(2) = '1' then
-				brightness <= brightness - 1;
-			end if;
-
 			if pulse_1kHz = '1' then
 				NIXIE_ENABLE <= '0';
 				if counter < brightness then
@@ -186,7 +182,14 @@ begin
 				counter := counter + 1;
 			end if;
 
-			switch_prev := switch_filtered(2);
+			if clrn = '0' then
+				brightness   <= (brightness'low => '0', others => '1');
+				NIXIE_ENABLE <= '1';
+			elsif switch_prev = '0' and switch_filtered(1) = '1' then
+				brightness <= brightness - 1;
+			end if;
+
+			switch_prev := switch_filtered(1);
 		end if;
 	end process;
 
