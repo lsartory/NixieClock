@@ -1,0 +1,11 @@
+DRC Rules Export File for PCB: D:\Misc\Nixie\Nixie.PcbDoc
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion_Nixie|Scope=Board|Minimum=4.00
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion_FPGA|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width_FPGA|Scope=Board|Minimum=5.00
+RuleKind=MinimumAnnularRing|RuleName=MinimumAnnularRing|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width_Power|Scope=Board|Minimum=7.87
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=5.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=5.00
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=2.50
+RuleKind=Clearance|RuleName=Clearance_HV+|Scope=Board|Minimum=31.50

@@ -1,0 +1,10 @@
+Output: Intergraph Netlist
+Type  : IntergraphNetlist
+From  : Project [Nixie.PrjPcb]
+   Generated File[Nixie_top.NET]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 09:26:07 On 09.04.2018

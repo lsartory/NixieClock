@@ -1,0 +1,123 @@
+Protel Design System Design Rule Check
+PCB File : D:\Misc\Nixie\Nixie.PcbDoc
+Date     : 02.03.2018
+Time     : 14:41:31
+
+Processing Rule : Clearance Constraint (Gap=0.127mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.8mm) (InNetClass('High_Voltage')),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.2mm) (Max=1mm) (Preferred=1mm) (InNetClass('Power') Or InNetClass('High_Voltage'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.127mm) (Max=0.4mm) (Preferred=0.2mm) (InNetClass('Digit_1_[9..0]') OR InNetClass('Digit_2_[9..0]') OR InNetClass('Digit_3_[9..0]') OR InNetClass('Digit_4_[9..0]') OR InNetClass('Digit_5_[9..0]') OR InNetClass('Digit_6_[9..0]'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.127mm) (Max=0.4mm) (Preferred=0.4mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.102mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.254mm) (Max=6.604mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0mm) (HasFootprint('TE_5645518-1')),(HasFootprint('IN-8'))
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.076mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.127mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Room U_Digit_2 (Bounding Region = (77.5mm, 61.25mm, 101mm, 87mm) (InComponentClass('U_Digit_2'))
+Rule Violations :0
+
+Processing Rule : Room U_Digit_3 (Bounding Region = (110.5mm, 61.25mm, 134mm, 87mm) (InComponentClass('U_Digit_3'))
+Rule Violations :0
+
+Processing Rule : Room U_Power_supplies (Bounding Region = (43mm, 83.5mm, 98mm, 143.5mm) (InComponentClass('U_Power_supplies'))
+Rule Violations :0
+
+Processing Rule : Room U_HV_supply (Bounding Region = (136.5mm, 92.5mm, 213mm, 143.5mm) (InComponentClass('U_HV_supply'))
+Rule Violations :0
+
+Processing Rule : Room U_GPS (Bounding Region = (121.25mm, 118.5mm, 141.25mm, 147.5mm) (InComponentClass('U_GPS'))
+Rule Violations :0
+
+Processing Rule : Room U_FPGA_power (Bounding Region = (115.75mm, 86.75mm, 149.75mm, 119.25mm) (InComponentClass('U_FPGA_power'))
+Rule Violations :0
+
+Processing Rule : Room U_Switch_1 (Bounding Region = (213.25mm, 92.75mm, 223.25mm, 106.75mm) (InComponentClass('U_Switch_1'))
+Rule Violations :0
+
+Processing Rule : Room U_Digit_6 (Bounding Region = (189.5mm, 61.25mm, 213mm, 87mm) (InComponentClass('U_Digit_6'))
+Rule Violations :0
+
+Processing Rule : Room U_Digit_4 (Bounding Region = (133.5mm, 61.25mm, 157mm, 87mm) (InComponentClass('U_Digit_4'))
+Rule Violations :0
+
+Processing Rule : Room U_Digit_5 (Bounding Region = (166.5mm, 61.25mm, 190mm, 87mm) (InComponentClass('U_Digit_5'))
+Rule Violations :0
+
+Processing Rule : Room U_2_5V_regulator (Bounding Region = (98.75mm, 109.95mm, 114.25mm, 126.7mm) (InComponentClass('U_2_5V_regulator'))
+Rule Violations :0
+
+Processing Rule : Room U_3_0V_regulator (Bounding Region = (98.75mm, 127.2mm, 114.25mm, 143.95mm) (InComponentClass('U_3_0V_regulator'))
+Rule Violations :0
+
+Processing Rule : Room U_Switch_2 (Bounding Region = (213.25mm, 109mm, 223.25mm, 123mm) (InComponentClass('U_Switch_2'))
+Rule Violations :0
+
+Processing Rule : Room U_1_2V_regulator (Bounding Region = (98.75mm, 92.7mm, 114.25mm, 109.45mm) (InComponentClass('U_1_2V_regulator'))
+Rule Violations :0
+
+Processing Rule : Room U_FPGA_config (Bounding Region = (104.5mm, 86mm, 150.75mm, 148.25mm) (InComponentClass('U_FPGA_config'))
+Rule Violations :0
+
+Processing Rule : Room U_FPGA_IOs (Bounding Region = (117.419mm, 109.339mm, 127.703mm, 119.623mm) (InComponentClass('U_FPGA_IOs'))
+Rule Violations :0
+
+Processing Rule : Room U_Digit_1 (Bounding Region = (54.5mm, 61.25mm, 78mm, 87mm) (InComponentClass('U_Digit_1'))
+Rule Violations :0
+
+Processing Rule : Room U_Display (Bounding Region = (156.5mm, 85.5mm, 167mm, 94mm) (InComponentClass('U_Display'))
+Rule Violations :0
+
+Processing Rule : Component Clearance Constraint ( Horizontal Gap = 0mm, Vertical Gap = 0mm ) (HasFootprint('IN-8') OR HasFootprint('TE_5645518-1')),(All) 
+Rule Violations :0
+
+Processing Rule : Component Clearance Constraint ( Horizontal Gap = 0.254mm, Vertical Gap = 0.254mm ) (All),(All) 
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=127mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 0
+Waived Violations : 0
+Time Elapsed        : 00:00:02

@@ -1,0 +1,226 @@
+*************************************************************
+FileName = Nixie.PcbDoc
+ODB++ directory structure
+*************************************************************
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\matrix\matrix
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\profile
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\stephdr
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\attrlist
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\top_overlay\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\top_overlay\attrlist
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\top_paste\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\top_paste\attrlist
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\top_solder\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\top_solder\attrlist
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\layer_2\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\layer_2\attrlist
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\layer_1\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\layer_1\attrlist
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\layer_3\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\layer_3\attrlist
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\bottom_overlay\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\bottom_overlay\attrlist
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\bottom_paste\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\bottom_paste\attrlist
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\layer_4\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\layer_4\attrlist
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\keep-out_layer\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\keep-out_layer\attrlist
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\mechanical_1\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\mechanical_1\attrlist
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\mechanical_13\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\mechanical_13\attrlist
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\bottom_solder\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\bottom_solder\attrlist
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\mechanical_15\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\mechanical_15\attrlist
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\drill\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\drill\attrlist
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\drill\tools
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\comp_+_top\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\comp_+_top\components
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\comp_+_bot\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\layers\comp_+_bot\components
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\steps\pcb\eda\data
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect70.8661x78.7402_135\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\oval70.8661x78.7402_135\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\oval23.622x59.0551_225\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\oval11.811x59.0551_315\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\oval11.811x59.0551_45\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect59.0551x47.2441_315\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect39.3701x37.4016_315\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect39.3701x37.4016_45\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect39.3701x37.4016_135\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect39.3701x37.4016_225\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect59.0551x47.2441_90\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect25.5906x43.3071_210\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect25.5906x43.3071_240\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect25.5906x43.3071_300\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect25.5906x43.3071_330\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect25.5906x43.3071_30\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect25.5906x43.3071_60\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect25.5906x43.3071_120\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect110.2362x68.8976_225\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect110.2362x68.8976_45\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect110.2362x68.8976_315\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect110.2362x68.8976_135\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\s218.5039_45\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect70.8661x78.7402_135\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\oval70.8661x78.7402_135\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\oval23.622x59.0551_225\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\oval11.811x59.0551_315\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\oval11.811x59.0551_45\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect59.0551x47.2441_315\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect39.3701x37.4016_315\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect39.3701x37.4016_45\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect39.3701x37.4016_135\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect39.3701x37.4016_225\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect75.8661x83.7402_135\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\oval75.8661x83.7402_135\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\oval28.622x64.0551_225\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\oval19.811x67.0551_315\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\oval19.811x67.0551_45\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect64.0551x52.2441_315\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect44.3701x42.4016_315\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect44.3701x42.4016_45\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect44.3701x42.4016_135\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect44.3701x42.4016_225\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\s226.5039_45\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect59.0551x47.2441_315\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect59.0551x47.2441_90\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect25.5906x43.3071_210\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect25.5906x43.3071_240\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect25.5906x43.3071_300\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect25.5906x43.3071_330\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect25.5906x43.3071_30\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect25.5906x43.3071_60\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect25.5906x43.3071_120\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect110.2362x68.8976_225\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect110.2362x68.8976_45\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect110.2362x68.8976_315\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect110.2362x68.8976_135\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect64.0551x52.2441_315\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\s226.5039_45\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect64.0551x52.2441_90\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect30.5906x48.3071_210\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect30.5906x48.3071_240\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect30.5906x48.3071_300\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect30.5906x48.3071_330\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect30.5906x48.3071_30\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect30.5906x48.3071_60\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect30.5906x48.3071_120\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect115.2362x73.8976_225\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect115.2362x73.8976_45\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect115.2362x73.8976_315\features
+
+Generated File : D:\Misc\Nixie\Project Outputs for Nixie\ODB\odb\symbols\rect115.2362x73.8976_135\features
+
