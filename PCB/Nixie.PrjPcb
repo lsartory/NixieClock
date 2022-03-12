@@ -140,23 +140,6 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document7]
-DocumentPath=Schematics\3.0V_regulator.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=5
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=RVNDDTSX
-
-[Document8]
 DocumentPath=Schematics\HV_supply.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -173,25 +156,8 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=XPQWYLKX
 
-[Document9]
-DocumentPath=Schematics\2.5V_regulator.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=4
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=PAARGQPM
-
-[Document10]
-DocumentPath=Schematics\1.2V_regulator.SchDoc
+[Document8]
+DocumentPath=Schematics\LV_supplies.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -207,7 +173,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=VQNGVSCF
 
-[Document11]
+[Document9]
 DocumentPath=Schematics\FPGA.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -224,7 +190,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=TNMTERTY
 
-[Document12]
+[Document10]
 DocumentPath=Schematics\FPGA_config.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -241,7 +207,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=LBEXHCMI
 
-[Document13]
+[Document11]
 DocumentPath=Schematics\FPGA_IOs.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -258,7 +224,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=MOXAVTIK
 
-[Document14]
+[Document12]
 DocumentPath=Schematics\FPGA_power.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -275,7 +241,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=DEBRCIYS
 
-[Document15]
+[Document13]
 DocumentPath=Schematics\Switch.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -292,7 +258,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=RRDROUEY
 
-[Document16]
+[Document14]
 DocumentPath=Libraries\Nixie.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -309,7 +275,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=KPGTEQDQ
 
-[Document17]
+[Document15]
 DocumentPath=Libraries\Nixie.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -326,7 +292,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=GFXYDNTF
 
-[Document18]
+[Document16]
 DocumentPath=Schematics\GPS.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -343,7 +309,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=JGDUXYLJ
 
-[Document19]
+[Document17]
 DocumentPath=Nixie.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -1280,6 +1246,11 @@ OutputName6=Footprint Comparison Report
 OutputDocumentPath6=
 OutputVariantName6=
 OutputDefault6=0
+OutputType7=BOM_Violations
+OutputName7=BOM Checks Report
+OutputDocumentPath7=
+OutputVariantName7=
+OutputDefault7=0
 
 [OutputGroup9]
 Name=Export Outputs
@@ -1455,6 +1426,12 @@ Type108=1
 Type109=1
 Type110=1
 Type111=1
+Type112=1
+Type113=1
+Type114=1
+Type115=1
+Type116=1
+Type117=1
 
 [Difference Levels]
 Type1=1
@@ -1519,6 +1496,10 @@ Type59=1
 Type60=1
 Type61=1
 Type62=1
+Type63=1
+Type64=1
+Type65=1
+Type66=1
 
 [Electrical Rules Check]
 Type1=1
@@ -1642,6 +1623,7 @@ Type118=3
 Type119=3
 MultiChannelAlternate=2
 AlternateItemFail=3
+Type122=2
 
 [ERC Connection Matrix]
 L1=NNNNNNNNNNNWNNNWW
@@ -2120,11 +2102,18 @@ PartTypes=0
 
 [NetInfos]
 Net1=NetName=+1.2V|NetColor=clYellow
-Net2=NetName=+3V|NetColor=$006E6EFF
-Net3=NetName=6VAC|NetColor=$003399FF
-Net4=NetName=+2.5V|NetColor=$006EFF6E
-Net5=NetName=HV+|NetColor=$00FF6EFF
-Net6=NetName=GND|NetColor=$00FF6E6E
+Net2=NetName=NetF1_1|NetColor=$00807CFF
+Net3=NetName=NetF1_2|NetColor=$00807CFF
+Net4=NetName=+3.3V|NetColor=$006E6EFF
+Net5=NetName=6VAC+|NetColor=$00FFFF6E
+Net6=NetName=NetJ1_1|NetColor=$00807CFF
+Net7=NetName=GND|NetColor=$00FF6E6E
+Net8=NetName=6VAC|NetColor=$003399FF
+Net9=NetName=HV+|NetColor=$00FF6EFF
+Net10=NetName=+3V|NetColor=$006E6EFF
+Net11=NetName=6VAC-|NetColor=$00FFFF6E
+Net12=NetName=+6V|NetColor=$003399FF
+Net13=NetName=+2.5V|NetColor=$006EFF6E
 
 [Comparison Options]
 ComparisonOptions0=Kind=Net|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
